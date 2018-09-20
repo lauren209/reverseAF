@@ -21,13 +21,13 @@ int main(int argc, char** argv){
   // allocate memory for reverse_contents
   // copy file_contents to reverse_contents
   // backward.
-  for(int i = size -1; i > -1; i--;){
+  for(int i = size -1; i > -1; i--){
     //write_file(f, buffer[i]; sizeof(char));
     reverse_contents[j] = file_contents[i];
     j++;
   }
 
   // write reverse_contents with write_file
-  write_file(argv[0], &reverse_contents, size);
+  write_file(argv[0], reverse_contents, size);
 
 }

@@ -24,9 +24,9 @@ int read_file(char* filename, char **buffer){
   FILE *file;
   file = fopen(filename, "r");
   if (file) {
-    while ((c = getc(file)) != EOF){
-      fread(buffer, size, 1, file)
-    }
+    // while ((c = getc(file)) != EOF){
+      fread(buffer, size, 1, file);
+    // }
     // Use fread
     fclose(file);
   }
@@ -50,16 +50,16 @@ int read_file(char* filename, char **buffer){
 *******************************************************************************/
 int write_file(char* filename, char *buffer, int size){
 
-  struct stat st;
-  stat(filename, &st);
-  int size = st.st_size;
+  // struct stat st;
+  // stat(filename, &st);
+  // int size = st.st_size;
 
   FILE *file;
   file = fopen(filename, "w");
 
-  while(c =getc(file) != EOF){
+  // while(c =getc(file) != EOF){
     fwrite(buffer, size, 1, file);
-  }
+  // }
 
 
 
