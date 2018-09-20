@@ -3,6 +3,14 @@
 #include <stdlib.h>
 #include "file_utils.h"
 
+
+
+/*******************************************************************************
+* main method that allows us to run the program
+* @param argc - integer of how many arguments there are
+* @param argv - the name of the file to be manipulated
+* @return int - the size of the file
+*******************************************************************************/
 int main(int argc, char** argv){
 
   char* file_contents;
