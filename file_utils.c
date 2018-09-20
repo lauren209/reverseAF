@@ -25,8 +25,7 @@ int read_file(char* filename, char **buffer){
   file = fopen(filename, "r");
   if (file) {
     while ((c = getc(file)) != EOF){
-      buffer[i] = putchar(c);
-      i = i +1;
+      fread(buffer, size, 1, file)
     }
     // Use fread
     fclose(file);
