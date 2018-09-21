@@ -1,6 +1,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <sys/stat.h>
 
 
 /*******************************************************************************
@@ -16,7 +17,6 @@ int read_file(char* filename, char **buffer){
   int size = st.st_size;
 
 
-
   *buffer = malloc(50 * size);
 
   int i = 0;
@@ -24,9 +24,11 @@ int read_file(char* filename, char **buffer){
   FILE *file;
   file = fopen(filename, "r");
   if (file) {
-    // while ((c = getc(file)) != EOF){
+    char c = getc(file);
+    while(c != EOF){
+      c = getc(file);
       fread(buffer, size, 1, file);
-    // }
+    }
     // Use fread
     fclose(file);
   }
@@ -56,12 +58,13 @@ int write_file(char* filename, char *buffer, int size){
 
   FILE *file;
   file = fopen(filename, "w");
-
-  // while(c =getc(file) != EOF){
+  char c = getc(file);
+  while(c != EOF){
+    c = getc(file);
     fwrite(buffer, size, 1, file);
-  // }
+  }
 
-
+  return size;
 
 
 
